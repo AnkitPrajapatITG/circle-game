@@ -11,7 +11,7 @@ let gameTimeout;
 let circle;
 
 function startGame() {
-   
+
     score = 0;
     timeLeft = 30;
     scoreDisplay.innerText = "Score: 0";
@@ -25,7 +25,7 @@ function startGame() {
         gameArea.appendChild(circle);
     }
 
-    moveCircle(); 
+    moveCircle();
 
     circle.addEventListener("click", handleCircleClick);
 
@@ -66,26 +66,26 @@ function endGame() {
 startBtn.addEventListener("click", startGame);
 
 
+// Disable right-click
 document.addEventListener("contextmenu", function (e) {
-  e.preventDefault();
+    e.preventDefault();
 });
 
+// Disable common inspect shortcuts
 document.addEventListener("keydown", function (e) {
-  // F12
-  if (e.key === "F12") {
-    e.preventDefault();
-  }
+    // F12
+    if (e.key === "F12") {
+        e.preventDefault();
+    }
 
-  // Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
-  if (
-    (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J")) ||
-    (e.ctrlKey && e.key === "U")
-  ) {
-    e.preventDefault();
-  }
+    // Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C
+    if (e.ctrlKey && e.shiftKey && ["I", "J", "C"].includes(e.key)) {
+        e.preventDefault();
+    }
 
-  // Ctrl+Shift+C (element picker)
-  if (e.ctrlKey && e.shiftKey && e.key === "C") {
-    e.preventDefault();
-  }
+    // Ctrl+U
+    if (e.ctrlKey && e.key === "u") {
+        e.preventDefault();
+    }
 });
+    
