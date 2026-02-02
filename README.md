@@ -1,43 +1,40 @@
-SparkMotion - Event Engagement and Data Platform
-Executive Summary
+# SparkMotion - Event Engagement and Data Platform
 
-SparkMotion is a cutting-edge event engagement and data platform designed to keep interactions live long after the event has concluded. Through the use of NFC-enabled wearable bands ("SparkBands"), SparkMotion enables a seamless, frictionless experience for event attendees, allowing organizers to track engagement, re-engage attendees post-event, and capture data effortlessly.
+## Executive Summary
 
-Table of Contents
+**SparkMotion** is a cutting-edge event engagement and data platform designed to keep interactions alive long after the event has concluded. Through the use of NFC-enabled wearable bands ("SparkBands"), SparkMotion enables a seamless, frictionless experience for event attendees, allowing organizers to track engagement, re-engage attendees post-event, and capture data effortlessly.
 
-Overview
+---
 
-Core Features
+## Table of Contents
 
-Installation
+- [Overview](#overview)
+- [Core Features](#core-features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [Configuration](#configuration)
+- [API Endpoints](#api-endpoints)
+- [Environment & Deployment](#environment-deployment)
+- [Data Security](#data-security)
+- [Contributors](#contributors)
 
-Usage
+---
 
-Project Structure
+## Overview
 
-Configuration
+**SparkMotion** offers an integrated platform that combines hardware (NFC wristbands) with software and analytics to improve event engagement. Unlike traditional methods like QR codes or paper pamphlets, SparkMotion makes every touchpoint trackable and extends engagement beyond the physical event, ensuring organizers can continue nurturing relationships.
 
-API Endpoints
+---
 
-Environment & Deployment
+## Core Features
 
-Data Security
+- **NFC-enabled SparkBands**: SparkBands are physical wristbands containing NFC chips that link to personalized, event-specific microsites when tapped by attendees' smartphones.
+- **Real-time Analytics**: Organizers get live insights into event performance, including engagement rates, donation triggers, and more.
+- **Post-event Re-engagement**: SparkMotion allows for ongoing communication with attendees, sending follow-ups like thank you messages, event highlights, and more.
+- **Customizable Attendee Experience**: Each event has a tailored microsite where attendees can access schedules, donation options, reminders, and more, making the engagement highly relevant and timely.
 
-Contributors
-
-Overview
-
-SparkMotion offers an integrated platform that combines hardware (NFC wristbands) with software and analytics to improve event engagement. Unlike traditional methods like QR codes or paper pamphlets, SparkMotion makes every touchpoint trackable and extends engagement beyond the physical event, ensuring organizers can continue nurturing relationships.
-
-Core Features
-
-NFC-enabled SparkBands: SparkBands are physical wristbands containing NFC chips that link to personalized, event-specific microsites when tapped by attendees' smartphones.
-
-Real-time Analytics: Organizers get live insights into event performance, including engagement rates, donation triggers, and more.
-
-Post-event Re-engagement: SparkMotion allows for ongoing communication with attendees, sending follow-ups like thank you messages, event highlights, and more.
-
-Customizable Attendee Experience: Each event has a tailored microsite where attendees can access schedules, donation options, reminders, and more, making the engagement highly relevant and timely.
+---
 
 ## Installation
 
@@ -54,39 +51,31 @@ Before you begin, ensure you have **Node.js** installed. If not, you can install
    ```bash
    node -v
    npm -v
+This should display the installed versions of node and npm.
 
-Installation
-
+Steps to Set Up the Project
 Clone the repository:
 
-git clone https://github.com/AlexBrownITG/SparkMotionApp.git
+git clone https://github.com/yourusername/sparkmotion.git
 cd sparkmotion
-
-
 Install dependencies:
 
 For backend (Node.js/Express):
 
 cd server
 npm install
-
-
 For frontend (React):
 
 cd frontend
 npm install
-
-
 Configure the environment:
 
 Create a .env file in the root directory and define the required environment variables:
 
-PORT=8080
+PORT=5000
 MONGO_URI=mongodb://your-db-uri
 JWT_SECRET=your-jwt-secret
 SPARKBAND_URL=http://your-sparkband-url
-
-
 Start the server:
 
 To run the server and the frontend, use the following commands:
@@ -94,25 +83,20 @@ To run the server and the frontend, use the following commands:
 For the backend:
 
 npm run dev
-
-
 For the frontend:
 
 cd frontend
 npm start
-
 Usage
-
 Once the project is set up:
 
-The backend API will run on http://localhost:8080
+The backend API will run on http://localhost:5000
 
 The frontend application will run on http://localhost:3000
 
 You can now interact with the admin and organizer dashboards, or test the attendee experience by tapping the SparkBand.
 
 Project Structure
-
 Here’s an overview of the project structure:
 
 .
@@ -134,9 +118,7 @@ Here’s an overview of the project structure:
     ├── package.json             # Frontend dependencies and scripts
     ├── .gitignore               # Files to ignore in version control
     └── README.md                # Frontend-specific documentation
-
 API Endpoints
-
 Here are the primary API endpoints for interacting with the SparkMotion platform:
 
 POST /api/events: Create a new event (Admin only)
@@ -152,7 +134,6 @@ POST /api/submit: Store attendee form submission
 GET /api/resolve/:bandId: Resolve the base URL to the destination URL for a given band
 
 Environment & Deployment
-
 SparkMotion is deployed on DigitalOcean using a MERN stack:
 
 Frontend: React
@@ -172,7 +153,6 @@ Deploy to DigitalOcean with the latest changes
 Set environment variables for MongoDB connection, JWT secret, and other necessary configurations
 
 Data Security
-
 SparkMotion handles sensitive attendee data, including personally identifiable information (PII) like emails and phone numbers. Here's how data is managed:
 
 PII is stored in MongoDB and is accessible only by SparkMotion Admin and the assigned Organizers for their events.
@@ -180,3 +160,6 @@ PII is stored in MongoDB and is accessible only by SparkMotion Admin and the ass
 Data is encrypted and stored with role-based access control to ensure that only authorized users can view or export sensitive data.
 
 All exports of attendee data are logged for compliance purposes.
+
+Contributors
+SparkMotion - Event Engagement and Data Platform
