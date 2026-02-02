@@ -85,7 +85,7 @@ Tailored experience = higher relevance & conversion
 
 ```bash
 # 1. Clone repo
-git clone https://github.com/yourusername/sparkmotion.git
+git clone -https://github.com/AlexBrownITG/SparkMotionApp.git
 cd sparkmotion
 
 # 2. Backend dependencies
@@ -161,15 +161,13 @@ text.
 6. Configuration
 ───────────────────────────────────────────────
 Key .env variables:
-envPORT=5000
+envPORT=8080
 MONGO_URI=your-mongodb-uri
 JWT_SECRET=super-secret-key-min-32-chars
 SPARKBAND_BASE_URL=https://yourdomain.com/   # Base for band redirects
-# Optional
 CLOUDINARY_URL=cloudinary://...
 EMAIL_SERVICE_USER=...
 EMAIL_SERVICE_PASS=...
-All sensitive values → never commit to git.
 ───────────────────────────────────────────────
 7. API Endpoints (Core)
 ───────────────────────────────────────────────
@@ -185,7 +183,6 @@ MethodEndpointDescriptionAccessPOST/api/eventsCreate new eventAdminGET/api/event
 ───────────────────────────────────────────────
 8. Environment & Deployment
 ───────────────────────────────────────────────
-Stack
 Frontend → React
 Backend  → Node.js + Express
 Database → MongoDB
