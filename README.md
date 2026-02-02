@@ -51,3 +51,8 @@ Before you begin, ensure you have **Node.js** installed. If not, you can install
    ```bash
    node -v
    npm -v
+
+Steps to Set Up the Project
+
+Clone the repository:
+
