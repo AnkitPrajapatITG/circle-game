@@ -1,58 +1,259 @@
-# SparkMotion - Event Engagement and Data Platform
+# SparkMotion  
+**Event Engagement & Data Platform**  
+Powered by NFC SparkBands ✨
 
-## Executive Summary
+───────────────────────────────────────────────
+          Executive Summary
+───────────────────────────────────────────────
 
-**SparkMotion** is a cutting-edge event engagement and data platform designed to keep interactions alive long after the event has concluded. Through the use of NFC-enabled wearable bands ("SparkBands"), SparkMotion enables a seamless, frictionless experience for event attendees, allowing organizers to track engagement, re-engage attendees post-event, and capture data effortlessly.
+**SparkMotion** is a modern platform that keeps event energy alive **long after the lights go out**.
 
----
+Using **NFC-enabled wearable bands (SparkBands)**, attendees tap → instant personalized experience.  
+Organizers gain:
+- Seamless tracking
+- Real-time insights
+- Powerful post-event re-engagement
+- Effortless data capture
 
-## Table of Contents
+Move beyond QR codes and flyers → build lasting connections. 🚀
 
-- [Overview](#overview)
-- [Core Features](#core-features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Project Structure](#project-structure)
-- [Configuration](#configuration)
-- [API Endpoints](#api-endpoints)
-- [Environment & Deployment](#environment-deployment)
-- [Data Security](#data-security)
-- [Contributors](#contributors)
+[Insert visual here: glowing NFC wristband in crowd – e.g. image:9 or image:6]
 
----
+───────────────────────────────────────────────
+          Table of Contents
+───────────────────────────────────────────────
 
-## Overview
+1. Overview  
+2. Core Features  
+3. Installation  
+4. Usage  
+5. Project Structure  
+6. Configuration  
+7. API Endpoints  
+8. Environment & Deployment  
+9. Data Security  
+10. Contributors  
 
-**SparkMotion** offers an integrated platform that combines hardware (NFC wristbands) with software and analytics to improve event engagement. Unlike traditional methods like QR codes or paper pamphlets, SparkMotion makes every touchpoint trackable and extends engagement beyond the physical event, ensuring organizers can continue nurturing relationships.
+───────────────────────────────────────────────
+          1. Overview
+───────────────────────────────────────────────
 
----
+**SparkMotion** = **Hardware + Software + Analytics**
 
-## Core Features
+• NFC wristbands (SparkBands) link directly to custom microsites  
+• Every tap is tracked → real-time + historical data  
+• Engagement continues post-event via automated follow-ups  
 
-- **NFC-enabled SparkBands**: SparkBands are physical wristbands containing NFC chips that link to personalized, event-specific microsites when tapped by attendees' smartphones.
-- **Real-time Analytics**: Organizers get live insights into event performance, including engagement rates, donation triggers, and more.
-- **Post-event Re-engagement**: SparkMotion allows for ongoing communication with attendees, sending follow-ups like thank you messages, event highlights, and more.
-- **Customizable Attendee Experience**: Each event has a tailored microsite where attendees can access schedules, donation options, reminders, and more, making the engagement highly relevant and timely.
+Unlike static QR codes or pamphlets → **every interaction becomes measurable and extendable**.
 
----
+[Insert visual here: attendee tapping wristband on phone → opens microsite – e.g. image:3 or image:4 style]
 
-## Installation
+───────────────────────────────────────────────
+          2. Core Features
+───────────────────────────────────────────────
 
-### Prerequisites
+🔹 **NFC SparkBands**  
+Physical wristbands with embedded NFC chips  
+Tap smartphone → opens personalized event microsite (no app needed)
 
-Before you begin, ensure you have **Node.js** installed. If not, you can install it by following these steps:
+🔹 **Real-time Analytics Dashboard**  
+Live views: tap counts, engagement heatmaps, donation triggers, form submissions  
+Perfect for on-site decisions & post-event reporting  
 
-1. Download and install Node.js from the official website: [https://nodejs.org/](https://nodejs.org/).
+[Insert visual here: analytics dashboard UI – e.g. image:2]
 
-   - **Note**: It's recommended to install the **LTS (Long Term Support)** version for stability.
+🔹 **Post-event Re-engagement Engine**  
+Automated thank-yous, highlight reels, personalized CTAs  
+Turn one-time attendees into long-term supporters
 
-2. Verify Node.js installation:
-   
-   ```bash
-   node -v
-   npm -v
+🔹 **Fully Customizable Microsite per Event**  
+Schedules • Reminders • Donation/merch links • Feedback forms • Social shares  
+Tailored experience = higher relevance & conversion
 
-Steps to Set Up the Project
+───────────────────────────────────────────────
+          3. Installation
+───────────────────────────────────────────────
 
-Clone the repository:
+**Prerequisites**  
+• Node.js LTS (v18–v20 recommended) → https://nodejs.org/  
+• MongoDB (local or Atlas)  
+• Git
 
+**Quick Setup Steps**
+
+```bash
+# 1. Clone repo
+git clone https://github.com/yourusername/sparkmotion.git
+cd sparkmotion
+
+# 2. Backend dependencies
+cd server
+npm install
+
+# 3. Frontend dependencies
+cd ../frontend
+npm install
+
+# 4. Create .env (in server/ or root)
+# Example minimal .env
+PORT=5000
+MONGO_URI=mongodb+srv://user:pass@cluster.mongodb.net/sparkmotion
+JWT_SECRET=your-very-long-random-secret-here
+SPARKBAND_BASE_URL=https://your-domain.com/tap/
+Run in development
+Bash# Terminal 1: Backend
+cd server
+npm run dev
+
+# Terminal 2: Frontend
+cd frontend
+npm start
+───────────────────────────────────────────────
+4. Usage (Local Development)
+───────────────────────────────────────────────
+• Backend API → http://localhost:5000
+• Frontend App → http://localhost:3000
+Test flow:
+
+Admin creates event
+Generate SparkBands (or QR fallback)
+Simulate tap → microsite loads
+Attendee submits form/donation → see live in analytics
+
+───────────────────────────────────────────────
+5. Project Structure
+───────────────────────────────────────────────
+text.
+├── server/                        # Backend (Node.js + Express + MongoDB)
+│   ├── config/                    # DB, JWT, etc.
+│   ├── constants/
+│   ├── controllers/
+│   ├── middleware/                # Auth, validation, errors
+│   ├── models/                    # Mongoose schemas
+│   ├── routes/
+│   ├── services/                  # Business logic, emails, etc.
+│   ├── utils/
+│   ├── .env                       ⚠️ gitignore!
+│   ├── index.js                   # Server entry
+│   └── package.json
+│
+└── frontend/                      # React (Vite / CRA)
+    ├── public/
+    ├── src/
+    │   ├── assets/
+    │   ├── components/
+    │   ├── pages/
+    │   ├── hooks/
+    │   ├── contexts/
+    │   ├── services/              # API layer
+    │   ├── utils/
+    │   ├── styles/
+    │   ├── App.jsx
+    │   └── main.jsx
+    ├── package.json
+    ├── .env
+    └── .gitignore
+───────────────────────────────────────────────
+6. Configuration
+───────────────────────────────────────────────
+Key .env variables:
+envPORT=5000
+MONGO_URI=your-mongodb-uri
+JWT_SECRET=super-secret-key-min-32-chars
+SPARKBAND_BASE_URL=https://yourdomain.com/   # Base for band redirects
+# Optional
+CLOUDINARY_URL=cloudinary://...
+EMAIL_SERVICE_USER=...
+EMAIL_SERVICE_PASS=...
+All sensitive values → never commit to git.
+───────────────────────────────────────────────
+7. API Endpoints (Core)
+───────────────────────────────────────────────
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MethodEndpointDescriptionAccessPOST/api/eventsCreate new eventAdminGET/api/events/:idGet event detailsAuthGET/api/events/:id/analyticsReal-time + historical analyticsOrganizerGET/api/events/:id/submissionsList attendee submissions/formsOrganizerPOST/api/tapLog NFC tap eventPublicPOST/api/submitSave form / donation submissionPublicGET/api/resolve/:bandIdResolve band → microsite URL (redirect)Public
+───────────────────────────────────────────────
+8. Environment & Deployment
+───────────────────────────────────────────────
+Stack
+Frontend → React
+Backend  → Node.js + Express
+Database → MongoDB
+Hosting  → DigitalOcean (Droplet / App Platform)
+Deployment Flow
+
+Merge to production branch
+DigitalOcean auto-detects & builds
+Set env vars in DigitalOcean dashboard
+Service auto-restarts
+
+[Insert visual here: MERN stack diagram – e.g. image:0 or image:1]
+───────────────────────────────────────────────
+9. Data Security
+───────────────────────────────────────────────
+• PII (email, phone…) encrypted at rest (MongoDB Atlas)
+• Strict role-based access control (Admin / Organizer / Viewer)
+• JWT auth + refresh tokens
+• All data exports logged for audit/compliance
+• Rate limiting on sensitive endpoints
+• HTTPS enforced everywhere
+• No public attendee lists
+Attendee trust is priority #1. 🔒
+───────────────────────────────────────────────
+10. Contributors
+───────────────────────────────────────────────
+Built with passion by the SparkMotion team.
+Ankit & contributors – let's spark the next big event! 🔥
+Questions / collab? Reach out.
+───────────────────────────────────────────────
