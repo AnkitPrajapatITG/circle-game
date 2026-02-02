@@ -126,6 +126,7 @@ Attendee submits form/donation → see live in analytics
 5. Project Structure
 ───────────────────────────────────────────────
 text.
+.
 ├── server/                        # Backend (Node.js + Express + MongoDB)
 │   ├── config/                    # DB, JWT, etc.
 │   ├── constants/
@@ -214,6 +215,7 @@ Built with passion by the SparkMotion team.
 Ankit & contributors – let's spark the next big event! 🔥
 Questions / collab? Reach out.
 ───────────────────────────────────────────────
+
 
 
 
