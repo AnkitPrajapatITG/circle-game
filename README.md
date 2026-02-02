@@ -2,11 +2,11 @@
 # SparkMotion  
 **Event Engagement & Data Platform**  
 Powered by NFC SparkBands ✨
-```
-───────────────────────────────────────────────
-          Executive Summary
-───────────────────────────────────────────────
-```
+
+───────────────────────────────────────────────  
+          1. Overview  
+───────────────────────────────────────────────  
+
 **SparkMotion** is a modern platform that keeps event energy alive **long after the lights go out**.
 
 Using **NFC-enabled wearable bands (SparkBands)**, attendees tap → instant personalized experience.  
@@ -327,6 +327,7 @@ npm run dev
 # Terminal 2: Frontend
 cd frontend
 npm start
+
 
 
 
