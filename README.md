@@ -1,3 +1,5 @@
+```
+
 # SparkMotion  
 **Event Engagement & Data Platform**  
 Powered by NFC SparkBands ✨
@@ -215,6 +217,7 @@ Built with passion by the SparkMotion team.
 Ankit & contributors – let's spark the next big event! 🔥
 Questions / collab? Reach out.
 ───────────────────────────────────────────────
+```
 
 
 
