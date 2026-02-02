@@ -219,6 +219,116 @@ Service auto-restarts
 Attendee trust is priority #1. 🔒
 ───────────────────────────────────────────────
 ```
+# SparkMotion  
+**Event Engagement & Data Platform**  
+Powered by NFC SparkBands ✨
+
+───────────────────────────────────────────────  
+          Executive Summary  
+───────────────────────────────────────────────  
+
+**SparkMotion** is a modern platform that keeps event energy alive **long after the lights go out**.
+
+Using **NFC-enabled wearable bands (SparkBands)**, attendees tap → instant personalized experience.  
+Organizers gain:
+- Seamless tracking
+- Real-time insights
+- Powerful post-event re-engagement
+- Effortless data capture
+
+Move beyond QR codes and flyers → build lasting connections. 🚀
+
+[Insert visual here: glowing NFC wristband in crowd – e.g. image:9 or image:6]
+
+          Table of Contents
+
+1. Overview  
+2. Core Features  
+3. Installation  
+4. Usage  
+5. Project Structure  
+6. Configuration  
+7. API Endpoints  
+8. Environment & Deployment  
+9. Data Security  
+10. Contributors  
+
+───────────────────────────────────────────────  
+          1. Overview  
+───────────────────────────────────────────────  
+
+**SparkMotion** = **Hardware + Software + Analytics**
+
+• NFC wristbands (SparkBands) link directly to custom microsites  
+• Every tap is tracked → real-time + historical data  
+• Engagement continues post-event via automated follow-ups  
+
+Unlike static QR codes or pamphlets → **every interaction becomes measurable and extendable**.
+
+[Insert visual here: attendee tapping wristband on phone → opens microsite – e.g. image:3 or image:4 style]
+
+───────────────────────────────────────────────  
+          2. Core Features  
+───────────────────────────────────────────────  
+
+🔹 **NFC SparkBands**  
+Physical wristbands with embedded NFC chips  
+Tap smartphone → opens personalized event microsite (no app needed)
+
+🔹 **Real-time Analytics Dashboard**  
+Live views: tap counts, engagement heatmaps, donation triggers, form submissions  
+Perfect for on-site decisions & post-event reporting  
+
+[Insert visual here: analytics dashboard UI – e.g. image:2]
+
+🔹 **Post-event Re-engagement Engine**  
+Automated thank-yous, highlight reels, personalized CTAs  
+Turn one-time attendees into long-term supporters
+
+🔹 **Fully Customizable Microsite per Event**  
+Schedules • Reminders • Donation/merch links • Feedback forms • Social shares  
+Tailored experience = higher relevance & conversion
+
+───────────────────────────────────────────────  
+          3. Installation  
+───────────────────────────────────────────────  
+
+**Prerequisites**  
+• Node.js LTS (v18–v20 recommended) [https://nodejs.org/](https://nodejs.org/)  
+• MongoDB (local or Atlas)  
+• Git
+
+**Quick Setup Steps**
+
+```bash
+# 1. Clone repo
+git clone -https://github.com/AlexBrownITG/SparkMotionApp.git
+cd sparkmotion
+
+# 2. Backend dependencies
+cd server
+npm install
+
+# 3. Frontend dependencies
+cd ../frontend
+npm install
+
+# 4. Create .env (in server/ or root)
+# Example minimal .env
+PORT=8080
+MONGO_URI=mongodb+srv://user:pass@cluster.mongodb.net/sparkmotion
+JWT_SECRET=your-very-long-random-secret-here
+SPARKBAND_BASE_URL=https://your-domain.com/tap/
+Run in development
+Bash# Terminal 1: Backend
+cd server
+npm run dev
+
+# Terminal 2: Frontend
+cd frontend
+npm start
+
+
 
 
 
