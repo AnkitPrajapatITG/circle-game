@@ -1,13 +1,12 @@
-```
 
 # SparkMotion  
 **Event Engagement & Data Platform**  
 Powered by NFC SparkBands ✨
-
+```
 ───────────────────────────────────────────────
           Executive Summary
 ───────────────────────────────────────────────
-
+```
 **SparkMotion** is a modern platform that keeps event energy alive **long after the lights go out**.
 
 Using **NFC-enabled wearable bands (SparkBands)**, attendees tap → instant personalized experience.  
@@ -21,9 +20,7 @@ Move beyond QR codes and flyers → build lasting connections. 🚀
 
 [Insert visual here: glowing NFC wristband in crowd – e.g. image:9 or image:6]
 
-───────────────────────────────────────────────
           Table of Contents
-───────────────────────────────────────────────
 
 1. Overview  
 2. Core Features  
@@ -36,10 +33,11 @@ Move beyond QR codes and flyers → build lasting connections. 🚀
 9. Data Security  
 10. Contributors  
 
+```
 ───────────────────────────────────────────────
           1. Overview
 ───────────────────────────────────────────────
-
+```
 **SparkMotion** = **Hardware + Software + Analytics**
 
 • NFC wristbands (SparkBands) link directly to custom microsites  
@@ -50,10 +48,11 @@ Unlike static QR codes or pamphlets → **every interaction becomes measurable a
 
 [Insert visual here: attendee tapping wristband on phone → opens microsite – e.g. image:3 or image:4 style]
 
+```
 ───────────────────────────────────────────────
           2. Core Features
 ───────────────────────────────────────────────
-
+```
 🔹 **NFC SparkBands**  
 Physical wristbands with embedded NFC chips  
 Tap smartphone → opens personalized event microsite (no app needed)
@@ -72,12 +71,13 @@ Turn one-time attendees into long-term supporters
 Schedules • Reminders • Donation/merch links • Feedback forms • Social shares  
 Tailored experience = higher relevance & conversion
 
+```
 ───────────────────────────────────────────────
           3. Installation
 ───────────────────────────────────────────────
-
+```
 **Prerequisites**  
-• Node.js LTS (v18–v20 recommended) → https://nodejs.org/  
+• Node.js LTS (v18–v20 recommended) [https://nodejs.org/](https://nodejs.org/)  
 • MongoDB (local or Atlas)  
 • Git
 
@@ -98,7 +98,7 @@ npm install
 
 # 4. Create .env (in server/ or root)
 # Example minimal .env
-PORT=5000
+PORT=8080
 MONGO_URI=mongodb+srv://user:pass@cluster.mongodb.net/sparkmotion
 JWT_SECRET=your-very-long-random-secret-here
 SPARKBAND_BASE_URL=https://your-domain.com/tap/
@@ -111,10 +111,12 @@ npm run dev
 cd frontend
 npm start
 
+```
+```
 ───────────────────────────────────────────────
 4. Usage (Local Development)
 ───────────────────────────────────────────────
-• Backend API → http://localhost:5000
+• Backend API → http://localhost:8080
 • Frontend App → http://localhost:3000
 Test flow:
 
@@ -122,7 +124,8 @@ Admin creates event
 Generate SparkBands (or QR fallback)
 Simulate tap → microsite loads
 Attendee submits form/donation → see live in analytics
-
+```
+```
 ───────────────────────────────────────────────
 5. Project Structure
 ───────────────────────────────────────────────
@@ -157,6 +160,8 @@ text.
     ├── package.json
     ├── .env
     └── .gitignore
+```
+```
 ───────────────────────────────────────────────
 6. Configuration
 ───────────────────────────────────────────────
@@ -168,10 +173,12 @@ SPARKBAND_BASE_URL=https://yourdomain.com/   # Base for band redirects
 CLOUDINARY_URL=cloudinary://...
 EMAIL_SERVICE_USER=...
 EMAIL_SERVICE_PASS=...
+```
+```
 ───────────────────────────────────────────────
 7. API Endpoints (Core)
 ───────────────────────────────────────────────
-## API Endpoints
+
 
 | Method | Endpoint                        | Description                               | Access    |
 |--------|---------------------------------|-------------------------------------------|-----------|
@@ -182,7 +189,8 @@ EMAIL_SERVICE_PASS=...
 | POST   | /api/tap                        | Log NFC tap event                         | Public    |
 | POST   | /api/submit                     | Save form / donation submission           | Public    |
 | GET    | /api/resolve/:bandId            | Resolve band → microsite URL (redirect)   | Public    |
-
+```
+```
 ───────────────────────────────────────────────
 8. Environment & Deployment
 ───────────────────────────────────────────────
