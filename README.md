@@ -169,59 +169,14 @@ All sensitive values → never commit to git.
 ───────────────────────────────────────────────
 7. API Endpoints (Core)
 ───────────────────────────────────────────────
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Method,Endpoint,Description,Access
+POST,/api/events,Create new event,Admin
+GET,/api/events/:id,Get event details,Auth
+GET,/api/events/:id/analytics,Real-time + historical analytics,Organizer
+GET,/api/events/:id/submissions,List attendee submissions/forms,Organizer
+POST,/api/tap,Log NFC tap event,Public
+POST,/api/submit,Save form / donation submission,Public
+GET,/api/resolve/:bandId,Resolve band → microsite URL (redirect),Public
 MethodEndpointDescriptionAccessPOST/api/eventsCreate new eventAdminGET/api/events/:idGet event detailsAuthGET/api/events/:id/analyticsReal-time + historical analyticsOrganizerGET/api/events/:id/submissionsList attendee submissions/formsOrganizerPOST/api/tapLog NFC tap eventPublicPOST/api/submitSave form / donation submissionPublicGET/api/resolve/:bandIdResolve band → microsite URL (redirect)Public
 ───────────────────────────────────────────────
 8. Environment & Deployment
@@ -257,3 +212,4 @@ Built with passion by the SparkMotion team.
 Ankit & contributors – let's spark the next big event! 🔥
 Questions / collab? Reach out.
 ───────────────────────────────────────────────
+
